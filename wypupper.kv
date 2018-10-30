@@ -1,0 +1,204 @@
+#: import os os
+<ScreenOne>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 0.95, 0.95, 0.95, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        spacing: 10
+        padding: 50
+        orientation: "vertical"
+        Image:
+            source: "wyp.png"
+            size_hint:(1.0, 0.70)
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Upload Photo"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: 18
+            bold: True
+            size_hint:(1.0, 0.15)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'screen_two'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Take Quiz"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: 18
+            bold: True
+            size_hint:(1.0, 0.15)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'screen_three'
+
+<ScreenTwo>:
+    BoxLayout:
+        orientation: "vertical"
+        FileChooserListView:
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Back"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: 18
+            bold: True
+            size_hint:(1.0, 0.15)
+            on_press:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'screen_one'
+
+<ScreenThree>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 0.95, 0.95, 0.95, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        spacing: 10
+        padding: 50
+        orientation: "vertical"
+
+        Label:
+            text: "Quiz"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: sp(36)
+        Label:
+            text: "1. Which of these describe you best? "
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: sp(18)
+
+
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Comical"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_2'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Fitness Junkie"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_2'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Social butterfly"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_2'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Reserved but loyal"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_2'
+        
+
+<Question2>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 0.95, 0.95, 0.95, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        spacing: 10
+        padding: 50
+        orientation: "vertical"
+
+        Label:
+            text: "Quiz"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: sp(36)
+        Label:
+            text: "2. What traits would you like\n your dog to have?"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: sp(18)
+
+
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Comical"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_2'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Fitness Junkie"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_2'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Social butterfly"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_2'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Reserved but loyal"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_2'
+
+        
+
+        
