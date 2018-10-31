@@ -307,59 +307,51 @@
             valign: "top"
             font_size: sp(36)
         Label:
-            text: "3. You have some spare time, what do you want\n to do with your dog?"
+            text: "4. What size of dog do you prefer?"
             color: 0.55, 0.35, 0.20, 1
             bold: True
             halign: "left"
             valign: "top"
             font_size: sp(18)
+            text_size: (250, None)
 
-
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
-            text: "Comical"
+            text: "Small"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
             bold: True
             size_hint:(1.0, 1.0)
+            text_size: (250, None)
             on_press:
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_5'
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
-            text: "Fitness Junkie"
+            text: "Medium"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
             bold: True
             size_hint:(1.0, 1.0)
+            text_size: (250, None)
             on_press:
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_5'
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
-            text: "Social butterfly"
+            text: "Large"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
             bold: True
             size_hint:(1.0, 1.0)
+            text_size: (250, None)
             on_press:
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_5'
-        Button:
-            background_normal: ""
-            background_color: 0.55, 0.35, 0.20, 1
-            text: "Reserved but loyal"
-            color: 0.95, 0.95, 0.95, 1
-            font_size: sp(18)
-            bold: True
-            size_hint:(1.0, 1.0)
-            on_press:
-                root.manager.transition.direction = 'left'
-                root.manager.current = 'question_5'
-
+    
 <Question5>:
     BoxLayout:
         canvas:
@@ -380,20 +372,22 @@
             valign: "top"
             font_size: sp(36)
         Label:
-            text: "3. You have some spare time, what do you want\n to do with your dog?"
+            text: "5. What kind of home do you have? "
             color: 0.55, 0.35, 0.20, 1
             bold: True
             halign: "left"
             valign: "top"
             font_size: sp(18)
+            text_size: (250, None)
 
 
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
-            text: "Comical"
+            text: "Apartment"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
+            text_size: (250, None)
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
@@ -402,9 +396,10 @@
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
-            text: "Fitness Junkie"
+            text: "House"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
+            text_size: (250, None)
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
@@ -413,20 +408,10 @@
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
-            text: "Social butterfly"
+            text: "House with a yard"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
-            bold: True
-            size_hint:(1.0, 1.0)
-            on_press:
-                root.manager.transition.direction = 'left'
-                root.manager.current = 'question_6'
-        Button:
-            background_normal: ""
-            background_color: 0.55, 0.35, 0.20, 1
-            text: "Reserved but loyal"
-            color: 0.95, 0.95, 0.95, 1
-            font_size: sp(18)
+            text_size: (250, None)
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
@@ -453,20 +438,21 @@
             valign: "top"
             font_size: sp(36)
         Label:
-            text: "3. You have some spare time, what do you want\n to do with your dog?"
+            text: "6. If you have kids at home, how old are they?"
             color: 0.55, 0.35, 0.20, 1
             bold: True
             halign: "left"
             valign: "top"
             font_size: sp(18)
+            text_size: (250, None)
 
-
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
-            text: "Comical"
+            text: "Less than a year old"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
+            text_size: (250, None)
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
@@ -475,9 +461,10 @@
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
-            text: "Fitness Junkie"
+            text: "1-8 years old"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
+            text_size: (250, None)
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
@@ -486,9 +473,10 @@
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
-            text: "Social butterfly"
+            text: "8-12 years old"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
+            text_size: (250, None)
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
@@ -497,9 +485,10 @@
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
-            text: "Reserved but loyal"
+            text: "I have no kids"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
+            text_size: (250, None)
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
@@ -526,20 +515,21 @@
             valign: "top"
             font_size: sp(36)
         Label:
-            text: "3. You have some spare time, what do you want\n to do with your dog?"
+            text: "7. Will you be able to walk/exercise your dog everyday? If not, can somebody else do it for you?"
             color: 0.55, 0.35, 0.20, 1
             bold: True
             halign: "left"
             valign: "top"
             font_size: sp(18)
+            text_size: (250, None)
 
-
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
-            text: "Comical"
+            text: "Yes"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
+            text_size: (250, None)
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
@@ -548,37 +538,16 @@
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
-            text: "Fitness Junkie"
+            text: "No"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
+            text_size: (250, None)
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_8'
-        Button:
-            background_normal: ""
-            background_color: 0.55, 0.35, 0.20, 1
-            text: "Social butterfly"
-            color: 0.95, 0.95, 0.95, 1
-            font_size: sp(18)
-            bold: True
-            size_hint:(1.0, 1.0)
-            on_press:
-                root.manager.transition.direction = 'left'
-                root.manager.current = 'question_8'
-        Button:
-            background_normal: ""
-            background_color: 0.55, 0.35, 0.20, 1
-            text: "Reserved but loyal"
-            color: 0.95, 0.95, 0.95, 1
-            font_size: sp(18)
-            bold: True
-            size_hint:(1.0, 1.0)
-            on_press:
-                root.manager.transition.direction = 'left'
-                root.manager.current = 'question_8'
-
+       
 <Question8>:
     BoxLayout:
         canvas:
@@ -599,20 +568,21 @@
             valign: "top"
             font_size: sp(36)
         Label:
-            text: "3. You have some spare time, what do you want\n to do with your dog?"
+            text: "8. Will you be able to get your dog regular check up?"
             color: 0.55, 0.35, 0.20, 1
             bold: True
             halign: "left"
             valign: "top"
             font_size: sp(18)
+            text_size: (250, None)
 
-
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
-            text: "Comical"
+            text: "Yes"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
+            text_size: (250, None)
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
@@ -621,31 +591,10 @@
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
-            text: "Fitness Junkie"
+            text: "No"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
-            bold: True
-            size_hint:(1.0, 1.0)
-            on_press:
-                root.manager.transition.direction = 'left'
-                root.manager.current = 'question_9'
-        Button:
-            background_normal: ""
-            background_color: 0.55, 0.35, 0.20, 1
-            text: "Social butterfly"
-            color: 0.95, 0.95, 0.95, 1
-            font_size: sp(18)
-            bold: True
-            size_hint:(1.0, 1.0)
-            on_press:
-                root.manager.transition.direction = 'left'
-                root.manager.current = 'question_9'
-        Button:
-            background_normal: ""
-            background_color: 0.55, 0.35, 0.20, 1
-            text: "Reserved but loyal"
-            color: 0.95, 0.95, 0.95, 1
-            font_size: sp(18)
+            text_size: (250, None)
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
@@ -672,20 +621,22 @@
             valign: "top"
             font_size: sp(36)
         Label:
-            text: "3. You have some spare time, what do you want\n to do with your dog?"
+            text: "9. When it comes to making your dog look good will you:"
             color: 0.55, 0.35, 0.20, 1
             bold: True
             halign: "left"
             valign: "top"
             font_size: sp(18)
+            text_size: (250, None)
 
 
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
-            text: "Comical"
+            text: "Give him a bath"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
+            text_size: (250, None)
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
@@ -694,9 +645,10 @@
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
-            text: "Fitness Junkie"
+            text: "Full groom at the groomers"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
+            text_size: (250, None)
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
@@ -705,20 +657,10 @@
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
-            text: "Social butterfly"
+            text: "Full groom and buy him/her dog clothes"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
-            bold: True
-            size_hint:(1.0, 1.0)
-            on_press:
-                root.manager.transition.direction = 'left'
-                root.manager.current = 'question_10'
-        Button:
-            background_normal: ""
-            background_color: 0.55, 0.35, 0.20, 1
-            text: "Reserved but loyal"
-            color: 0.95, 0.95, 0.95, 1
-            font_size: sp(18)
+            text_size: (250, None)
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
@@ -745,49 +687,43 @@
             valign: "top"
             font_size: sp(36)
         Label:
-            text: "3. You have some spare time, what do you want\n to do with your dog?"
+            text: "10. What kind of fur parent will you be?"
             color: 0.55, 0.35, 0.20, 1
             bold: True
             halign: "left"
             valign: "top"
             font_size: sp(18)
+            text_size: (250, None)
 
-
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
-            text: "Comical"
+            text: "The cuddler"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
-            bold: True
-            size_hint:(1.0, 1.0)
-            
-        Button:
-            background_normal: ""
-            background_color: 0.55, 0.35, 0.20, 1
-            text: "Fitness Junkie"
-            color: 0.95, 0.95, 0.95, 1
-            font_size: sp(18)
-            bold: True
-            size_hint:(1.0, 1.0)
-           
-        Button:
-            background_normal: ""
-            background_color: 0.55, 0.35, 0.20, 1
-            text: "Social butterfly"
-            color: 0.95, 0.95, 0.95, 1
-            font_size: sp(18)
+            text_size: (250, None)
             bold: True
             size_hint:(1.0, 1.0)
 
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
-            text: "Reserved but loyal"
+            text: "Strict and consistent"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
+            text_size: (250, None)
             bold: True
             size_hint:(1.0, 1.0)
-    
+
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "The pack leader"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            text_size: (250, None)
+            bold: True
+            size_hint:(1.0, 1.0)
+
 
         
