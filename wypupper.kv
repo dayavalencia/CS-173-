@@ -78,6 +78,7 @@
             halign: "left"
             valign: "top"
             font_size: sp(18)
+            text_size: (250, None)
 
 
         Button:
@@ -86,6 +87,7 @@
             text: "Comical"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
+            text_size: (250, None)
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
@@ -97,6 +99,7 @@
             text: "Fitness Junkie"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
+            text_size: (250, None)
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
@@ -108,6 +111,7 @@
             text: "Social butterfly"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
+            text_size: (250, None)
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
@@ -119,6 +123,7 @@
             text: "Reserved but loyal"
             color: 0.95, 0.95, 0.95, 1
             font_size: sp(18)
+            text_size: (250, None)
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
@@ -146,7 +151,163 @@
             valign: "top"
             font_size: sp(36)
         Label:
-            text: "2. What traits would you like\n your dog to have?"
+            text: "2. What traits would you like your dog to have?"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: sp(18)
+            text_size: (250, None)
+
+
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Super friendly and follows you around wherever you go"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            text_size: (250, None)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_3'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Alert and protective"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            text_size: (250, None)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_3'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Lap dog"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            text_size: (250, None)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_3'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Active"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            text_size: (250, None)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_3'
+
+<Question3>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 0.95, 0.95, 0.95, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        spacing: 10
+        padding: 50
+        orientation: "vertical"
+
+        Label:
+            text: "Quiz"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: sp(36)
+        Label:
+            text: "3. You have some spare time, what do you want to do with your dog?"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: sp(18)
+            text_size: (250, None)
+
+
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Cuddle!"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            text_size: (250, None)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_4'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Go to the park and play fetch!"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            text_size: (250, None)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_4'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Read a good book with your dog beside you"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            text_size: (250, None)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_4'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Go jogging with your dog"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            text_size: (250, None)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_4'
+
+<Question4>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 0.95, 0.95, 0.95, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        spacing: 10
+        padding: 50
+        orientation: "vertical"
+
+        Label:
+            text: "Quiz"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: sp(36)
+        Label:
+            text: "3. You have some spare time, what do you want\n to do with your dog?"
             color: 0.55, 0.35, 0.20, 1
             bold: True
             halign: "left"
@@ -164,7 +325,7 @@
             size_hint:(1.0, 1.0)
             on_press:
                 root.manager.transition.direction = 'left'
-                root.manager.current = 'question_2'
+                root.manager.current = 'question_5'
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
@@ -175,7 +336,7 @@
             size_hint:(1.0, 1.0)
             on_press:
                 root.manager.transition.direction = 'left'
-                root.manager.current = 'question_2'
+                root.manager.current = 'question_5'
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
@@ -186,7 +347,7 @@
             size_hint:(1.0, 1.0)
             on_press:
                 root.manager.transition.direction = 'left'
-                root.manager.current = 'question_2'
+                root.manager.current = 'question_5'
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
@@ -197,8 +358,436 @@
             size_hint:(1.0, 1.0)
             on_press:
                 root.manager.transition.direction = 'left'
-                root.manager.current = 'question_2'
+                root.manager.current = 'question_5'
 
-        
+<Question5>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 0.95, 0.95, 0.95, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        spacing: 10
+        padding: 50
+        orientation: "vertical"
+
+        Label:
+            text: "Quiz"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: sp(36)
+        Label:
+            text: "3. You have some spare time, what do you want\n to do with your dog?"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: sp(18)
+
+
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Comical"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_6'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Fitness Junkie"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_6'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Social butterfly"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_6'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Reserved but loyal"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_6'
+
+<Question6>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 0.95, 0.95, 0.95, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        spacing: 10
+        padding: 50
+        orientation: "vertical"
+
+        Label:
+            text: "Quiz"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: sp(36)
+        Label:
+            text: "3. You have some spare time, what do you want\n to do with your dog?"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: sp(18)
+
+
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Comical"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_7'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Fitness Junkie"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_7'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Social butterfly"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_7'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Reserved but loyal"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_7'
+
+<Question7>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 0.95, 0.95, 0.95, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        spacing: 10
+        padding: 50
+        orientation: "vertical"
+
+        Label:
+            text: "Quiz"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: sp(36)
+        Label:
+            text: "3. You have some spare time, what do you want\n to do with your dog?"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: sp(18)
+
+
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Comical"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_8'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Fitness Junkie"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_8'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Social butterfly"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_8'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Reserved but loyal"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_8'
+
+<Question8>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 0.95, 0.95, 0.95, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        spacing: 10
+        padding: 50
+        orientation: "vertical"
+
+        Label:
+            text: "Quiz"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: sp(36)
+        Label:
+            text: "3. You have some spare time, what do you want\n to do with your dog?"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: sp(18)
+
+
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Comical"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_9'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Fitness Junkie"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_9'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Social butterfly"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_9'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Reserved but loyal"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_9'
+
+<Question9>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 0.95, 0.95, 0.95, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        spacing: 10
+        padding: 50
+        orientation: "vertical"
+
+        Label:
+            text: "Quiz"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: sp(36)
+        Label:
+            text: "3. You have some spare time, what do you want\n to do with your dog?"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: sp(18)
+
+
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Comical"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_10'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Fitness Junkie"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_10'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Social butterfly"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_10'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Reserved but loyal"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'question_10'
+
+<Question10>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 0.95, 0.95, 0.95, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        spacing: 10
+        padding: 50
+        orientation: "vertical"
+
+        Label:
+            text: "Quiz"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: sp(36)
+        Label:
+            text: "3. You have some spare time, what do you want\n to do with your dog?"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: sp(18)
+
+
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Comical"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+            
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Fitness Junkie"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+           
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Social butterfly"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Reserved but loyal"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: sp(18)
+            bold: True
+            size_hint:(1.0, 1.0)
+    
 
         
