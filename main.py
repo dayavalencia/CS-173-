@@ -9,6 +9,13 @@ from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.filechooser import FileChooserIconView
 
+import io
+from kivy.core.image import Image as CoreImage
+
+# imgPath = ""
+# dogs = ["Husky", ]
+
+
 class ScreenOne(Screen):
     pass
 
@@ -18,7 +25,7 @@ class ScreenTwo(Screen):
 # quiz -------------------------------
 class ScreenThree(Screen):
     pass
-        
+
 
 class Question2(Screen):
     pass
@@ -49,21 +56,21 @@ class Question10(Screen):
 
 class WYPupper(App):
     # scores
-    qscore = { 
+    qscore = {
         'corgi': 0,
         'pug': 0,
         'husky': 0,
         'german_shepherd': 0,
         'chihuahua': 0
     }
-    
+
 
     def build(self):
         screen_manager = ScreenManager()
 
         screen_manager.add_widget(ScreenOne(name = "screen_one")) #home
         screen_manager.add_widget(ScreenTwo(name = "screen_two")) #filechooser
-
+        screen_manager.add_widget(AlgoResult(name = "result")) #algo results screen
         screen_manager.add_widget(ScreenThree(name = "screen_three")) #quizstart
         screen_manager.add_widget(Question2(name = "question_2")) #q2
         screen_manager.add_widget(Question3(name = "question_3")) #q3
@@ -74,6 +81,7 @@ class WYPupper(App):
         screen_manager.add_widget(Question8(name = "question_8")) #q8
         screen_manager.add_widget(Question9(name = "question_9")) #q9
         screen_manager.add_widget(Question10(name = "question_10")) #q10
+                screen_manager.add_widget(QuizResult(name = "quiz_result")) #q10
 
         return screen_manager
 
