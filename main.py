@@ -18,6 +18,7 @@ class ScreenTwo(Screen):
 # quiz -------------------------------
 class ScreenThree(Screen):
     pass
+        
 
 class Question2(Screen):
     pass
@@ -47,6 +48,15 @@ class Question10(Screen):
     pass
 
 class WYPupper(App):
+    # scores
+    qscore = { 
+        'corgi': 0,
+        'pug': 0,
+        'husky': 0,
+        'german_shepherd': 0,
+        'chihuahua': 0
+    }
+    
 
     def build(self):
         screen_manager = ScreenManager()

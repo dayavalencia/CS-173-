@@ -78,7 +78,9 @@
             halign: "left"
             valign: "top"
             font_size: 18
-
+        Label:
+            id: lbl1   
+            color: 0.0, 0.0, 0.0, 1
 
 
         Button:
@@ -90,8 +92,12 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['pug'] = app.qscore['pug'] + 1
+                #root.ids.lbl1.text = 'SharedVar is ' + str(app.qscore['pug'])
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_2'
+                
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
@@ -101,6 +107,9 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['husky'] = app.qscore['husky'] + 1
+                app.qscore['german_shepherd'] = app.qscore['german_shepherd'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_2'
         Button:
@@ -112,6 +121,8 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['corgi'] = app.qscore['corgi'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_2'
         Button:
@@ -123,6 +134,8 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['chihuahua'] = app.qscore['chihuahua'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_2'
         
@@ -165,6 +178,8 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['corgi'] = app.qscore['corgi'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_3'
         Button:
@@ -176,6 +191,8 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['german_shepherd'] = app.qscore['german_shepherd'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_3'
         Button:
@@ -187,6 +204,9 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['chihuahua'] = app.qscore['chihuahua'] + 1
+                app.qscore['pug'] = app.qscore['pug'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_3'
         Button:
@@ -198,6 +218,8 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['husky'] = app.qscore['husky'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_3'
 
@@ -238,6 +260,9 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['chihuahua'] = app.qscore['chihuahua'] + 1
+                app.qscore['pug'] = app.qscore['pug'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_4'
         Button:
@@ -249,6 +274,10 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['husky'] = app.qscore['husky'] + 1
+                app.qscore['corgi'] = app.qscore['corgi'] + 1
+                app.qscore['german_shepherd'] = app.qscore['german_shepherd'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_4'
         Button:
@@ -260,6 +289,9 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['chihuahua'] = app.qscore['chihuahua'] + 1
+                app.qscore['pug'] = app.qscore['pug'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_4'
         Button:
@@ -271,6 +303,9 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['husky'] = app.qscore['husky'] + 1
+                app.qscore['german_shepherd'] = app.qscore['german_shepherd'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_4'
 
@@ -310,6 +345,8 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['chihuahua'] = app.qscore['chihuahua'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_5'
         Button:
@@ -321,6 +358,9 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['corgi'] = app.qscore['corgi'] + 1
+                app.qscore['pug'] = app.qscore['pug'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_5'
         Button:
@@ -332,6 +372,9 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['german_shepherd'] = app.qscore['german_shepherd'] + 1
+                app.qscore['husky'] = app.qscore['husky'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_5'
     
@@ -372,6 +415,10 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['corgi'] = app.qscore['corgi'] + 1
+                app.qscore['chihuahua'] = app.qscore['chihuahua'] + 1
+                app.qscore['pug'] = app.qscore['pug'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_6'
         Button:
@@ -383,6 +430,10 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['corgi'] = app.qscore['corgi'] + 1
+                app.qscore['chihuahua'] = app.qscore['chihuahua'] + 1
+                app.qscore['pug'] = app.qscore['pug'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_6'
         Button:
@@ -394,6 +445,12 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['corgi'] = app.qscore['corgi'] + 1
+                app.qscore['chihuahua'] = app.qscore['chihuahua'] + 1
+                app.qscore['pug'] = app.qscore['pug'] + 1
+                app.qscore['german_shepherd'] = app.qscore['german_shepherd'] + 1
+                app.qscore['husky'] = app.qscore['husky'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_6'
 
@@ -444,6 +501,8 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['husky'] = app.qscore['husky'] + 1
+            
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_7'
         Button:
@@ -455,6 +514,9 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['corgi'] = app.qscore['corgi'] + 1
+                app.qscore['pug'] = app.qscore['pug'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_7'
         Button:
@@ -466,6 +528,12 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['corgi'] = app.qscore['corgi'] + 1
+                app.qscore['chihuahua'] = app.qscore['chihuahua'] + 1
+                app.qscore['pug'] = app.qscore['pug'] + 1
+                app.qscore['german_shepherd'] = app.qscore['german_shepherd'] + 1
+                app.qscore['husky'] = app.qscore['husky'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_7'
 
@@ -489,7 +557,7 @@
             valign: "top"
             font_size: 36
         Label:
-            text: "7. Will you be able to walk/exercise your dog everyday? If not, can somebody else do it for you?"
+            text: "7. Will you be able to walk/exercise your dog everyday?\n If not, can somebody else do it for you?"
             color: 0.55, 0.35, 0.20, 1
             bold: True
             halign: "left"
@@ -505,6 +573,11 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['corgi'] = app.qscore['corgi'] + 1
+                app.qscore['chihuahua'] = app.qscore['chihuahua'] + 1
+                app.qscore['german_shepherd'] = app.qscore['german_shepherd'] + 1
+                app.qscore['husky'] = app.qscore['husky'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_8'
         Button:
@@ -516,6 +589,8 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['pug'] = app.qscore['pug'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_8'
        
@@ -555,6 +630,10 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['chihuahua'] = app.qscore['chihuahua'] + 1
+                app.qscore['pug'] = app.qscore['pug'] + 1
+                app.qscore['husky'] = app.qscore['husky'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_9'
         Button:
@@ -566,6 +645,9 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['corgi'] = app.qscore['corgi'] + 1
+                app.qscore['german_shepherd'] = app.qscore['german_shepherd'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_9'
 
@@ -606,6 +688,12 @@
             bold: True
             size_hint:(1.0, 1.0)
             on_press:
+                app.qscore['corgi'] = app.qscore['corgi'] + 1
+                app.qscore['chihuahua'] = app.qscore['chihuahua'] + 1
+                app.qscore['pug'] = app.qscore['pug'] + 1
+                app.qscore['german_shepherd'] = app.qscore['german_shepherd'] + 1
+                app.qscore['husky'] = app.qscore['husky'] + 1
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_10'
         Button:
@@ -666,6 +754,8 @@
             font_size: 18
             bold: True
             size_hint:(1.0, 1.0)
+            on_press:
+                app.qscore['corgi'] = app.qscore['corgi'] + 1
 
         Button:
             background_normal: ""
@@ -675,6 +765,9 @@
             font_size: 18
             bold: True
             size_hint:(1.0, 1.0)
+            on_press:
+                app.qscore['chihuahua'] = app.qscore['chihuahua'] + 1
+                app.qscore['pug'] = app.qscore['pug'] + 1
 
         Button:
             background_normal: ""
@@ -684,6 +777,9 @@
             font_size: 18
             bold: True
             size_hint:(1.0, 1.0)
+            on_press:
+                app.qscore['german_shepherd'] = app.qscore['german_shepherd'] + 1
+                app.qscore['husky'] = app.qscore['husky'] + 1
 
 
         
