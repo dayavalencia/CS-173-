@@ -40,6 +40,13 @@
     BoxLayout:
         orientation: "vertical"
         FileChooserIconView:
+            #path: "/DCIM/Camera"   #for android phone?
+            path: "/home/ria_yangzon/Pictures" #For Ria Desktop
+            filters: ["*.jpg","*.png"]
+            on_submit:
+                #root.select(*args)
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'result'
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
@@ -51,6 +58,23 @@
             on_press:
                 root.manager.transition.direction = 'right'
                 root.manager.current = 'screen_one'
+<AlgoResult>:
+    #path - current path of the file chooser + name of selected file? (way to get the selected file maybe?)
+    #https://kivy.org/doc/stable/api-kivy.core.image.html
+    #https://stackoverflow.com/questions/19735498/how-do-i-get-info-of-a-file-selected-with-filechooser-in-kivy
+    BoxLayout:
+        orientation: "vertical"
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Done"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: 18
+            bold: True
+            size_hint:(1.0, 0.15)
+            on_press:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'screen_two'
 
 <ScreenThree>:
     BoxLayout:
@@ -79,7 +103,7 @@
             valign: "top"
             font_size: 18
         Label:
-            id: lbl1   
+            id: lbl1
             color: 0.0, 0.0, 0.0, 1
 
 
@@ -97,7 +121,7 @@
 
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_2'
-                
+
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
@@ -138,7 +162,7 @@
 
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_2'
-        
+
 
 <Question2>:
     BoxLayout:
@@ -166,7 +190,7 @@
             halign: "left"
             valign: "top"
             font_size: 18
-            
+
 
 
         Button:
@@ -377,7 +401,7 @@
 
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_5'
-    
+
 <Question5>:
     BoxLayout:
         canvas:
@@ -502,7 +526,7 @@
             size_hint:(1.0, 1.0)
             on_press:
                 app.qscore['husky'] = app.qscore['husky'] + 1
-            
+
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_7'
         Button:
@@ -593,7 +617,7 @@
 
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_8'
-       
+
 <Question8>:
     BoxLayout:
         canvas:
@@ -756,7 +780,8 @@
             size_hint:(1.0, 1.0)
             on_press:
                 app.qscore['corgi'] = app.qscore['corgi'] + 1
-
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'quiz_result'
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
@@ -768,7 +793,8 @@
             on_press:
                 app.qscore['chihuahua'] = app.qscore['chihuahua'] + 1
                 app.qscore['pug'] = app.qscore['pug'] + 1
-
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'quiz_result'
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
@@ -780,6 +806,5 @@
             on_press:
                 app.qscore['german_shepherd'] = app.qscore['german_shepherd'] + 1
                 app.qscore['husky'] = app.qscore['husky'] + 1
-
-
-        
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'quiz_result'
