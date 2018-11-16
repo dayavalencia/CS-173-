@@ -47,6 +47,10 @@ class Question9(Screen):
 class Question10(Screen):
     pass
 
+class ResultScreen(Screen):
+    def giveMax():
+        
+
 class WYPupper(App):
     # scores
     qscore = { 
@@ -56,6 +60,13 @@ class WYPupper(App):
         'german_shepherd': 0,
         'chihuahua': 0
     }
+
+    # doggo data
+    corgi_data = ('corgi.jpg', 'Corgi', '')
+    pug_data = ('pug.jpg', 'Pug', '')
+    husky_data = ('husky.jpg', 'Husky', '')
+    german_shepherd_data = ('german_shepherd.jpg', 'Corgi', '')
+    chihuahua_data = ('chihuahua.jpg', 'Chihuahua', '')
     
 
     def build(self):
