@@ -22,6 +22,8 @@ class ScreenOne(Screen):
 class ScreenTwo(Screen):
     pass
 
+class AlgoResult(Screen):
+    pass
 # quiz -------------------------------
 class ScreenThree(Screen):
     pass
@@ -54,6 +56,9 @@ class Question9(Screen):
 class Question10(Screen):
     pass
 
+class QuizResult(Screen):
+    pass
+
 class WYPupper(App):
     # scores
     qscore = {
@@ -81,7 +86,7 @@ class WYPupper(App):
         screen_manager.add_widget(Question8(name = "question_8")) #q8
         screen_manager.add_widget(Question9(name = "question_9")) #q9
         screen_manager.add_widget(Question10(name = "question_10")) #q10
-                screen_manager.add_widget(QuizResult(name = "quiz_result")) #q10
+        screen_manager.add_widget(QuizResult(name = "quiz_result")) #q10
 
         return screen_manager
 
