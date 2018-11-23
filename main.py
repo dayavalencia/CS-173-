@@ -12,9 +12,6 @@ from kivy.uix.filechooser import FileChooserIconView
 import io
 from kivy.core.image import Image as CoreImage
 
-# imgPath = ""
-# dogs = ["Husky", ]
-
 
 class ScreenOne(Screen):
     pass

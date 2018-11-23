@@ -43,9 +43,10 @@
             #path: "/DCIM/Camera"   #for android phone?
             path: "/home/ria_yangzon/Pictures" #For Ria Desktop
             filters: ["*.jpg","*.png"]
+            multiselect: False
             on_submit:
                 #root.select(*args)
-                root.manager.transition.direction = 'right'
+                root.manager.transition.direction = 'left'
                 root.manager.current = 'result'
         Button:
             background_normal: ""
