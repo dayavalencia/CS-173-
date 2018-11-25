@@ -781,8 +781,18 @@
             size_hint:(1.0, 1.0)
             on_press:
                 app.qscore['corgi'] = app.qscore['corgi'] + 1
+
+                c = max(app.qscore, key=app.qscore.get)
                 root.manager.transition.direction = 'left'
-                root.manager.current = 'quiz_result'
+
+                if c == "corgi": root.manager.current = 'corgi'
+                elif c == "pug": root.manager.current = 'pug'
+                elif c == "husky": root.manager.current = 'husky'
+                elif c == "german_shepherd": root.manager.current = 'gs'
+                elif c == "chihuahua": root.manager.current = 'chihuahua'
+
+
+
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
@@ -794,8 +804,19 @@
             on_press:
                 app.qscore['chihuahua'] = app.qscore['chihuahua'] + 1
                 app.qscore['pug'] = app.qscore['pug'] + 1
+                
+                c = max(app.qscore, key=app.qscore.get)
                 root.manager.transition.direction = 'left'
-                root.manager.current = 'quiz_result'
+
+                if c == "corgi": root.manager.current = 'corgi'
+                elif c == "pug": root.manager.current = 'pug'
+                elif c == "husky": root.manager.current = 'husky'
+                elif c == "german_shepherd": root.manager.current = 'gs'
+                elif c == "chihuahua": root.manager.current = 'chihuahua'
+
+
+
+
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
@@ -807,5 +828,133 @@
             on_press:
                 app.qscore['german_shepherd'] = app.qscore['german_shepherd'] + 1
                 app.qscore['husky'] = app.qscore['husky'] + 1
+                
+                c = max(app.qscore, key=app.qscore.get)
                 root.manager.transition.direction = 'left'
-                root.manager.current = 'quiz_result'
+
+                if c == "corgi": root.manager.current = 'corgi'
+                elif c == "pug": root.manager.current = 'pug'
+                elif c == "husky": root.manager.current = 'husky'
+                elif c == "german_shepherd": root.manager.current = 'gs'
+                elif c == "chihuahua": root.manager.current = 'chihuahua'
+                    
+                
+
+<Corgi_Result>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 0.95, 0.95, 0.95, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        spacing: 10
+        padding: 50
+        orientation: "vertical"
+
+        Image:
+            source: "corgi.jpg"
+            size_hint:(1.0, 0.70)
+        Label:
+            text: "Corgi"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: 36
+
+<Pug_Result>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 0.95, 0.95, 0.95, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        spacing: 10
+        padding: 50
+        orientation: "vertical"
+
+        Image:
+            source: "pug.jpg"
+            size_hint:(1.0, 0.70)
+        Label:
+            text: "Pug"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: 36
+
+
+<Husky_Result>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 0.95, 0.95, 0.95, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        spacing: 10
+        padding: 50
+        orientation: "vertical"
+
+        Image:
+            source: "husky.jpg"
+            size_hint:(1.0, 0.70)
+        Label:
+            text: "Husky"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: 36
+
+
+<GS_Result>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 0.95, 0.95, 0.95, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        spacing: 10
+        padding: 50
+        orientation: "vertical"
+
+        Image:
+            source: "german_shepherd.jpg"
+            size_hint:(1.0, 0.70)
+        Label:
+            text: "German Shepherd"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: 36
+
+
+<Chihuahua_Result>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 0.95, 0.95, 0.95, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        spacing: 10
+        padding: 50
+        orientation: "vertical"
+
+        Image:
+            source: "chihuahua.jpg"
+            size_hint:(1.0, 0.70)
+        Label:
+            text: "Chihuahua"
+            color: 0.55, 0.35, 0.20, 1
+            bold: True
+            halign: "left"
+            valign: "top"
+            font_size: 36
+        

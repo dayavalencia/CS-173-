@@ -1,5 +1,5 @@
 import kivy
-kivy.require('1.10.1')
+import os
 
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
@@ -52,10 +52,46 @@ class Question9(Screen):
 
 class Question10(Screen):
     pass
+    # def getMax(self):
+    #     c = max(app.qscore, key=app.qscore.get)
 
-class ResultScreen(Screen):
-    def giveMax():
-        
+    #     if c == "corgi":
+    #         app.img_src = "corgi.jpg"
+    #         #app.img_src = os.path.join(os.path.dirname(os.path.realpath(__file__)), "corgi.jpg")
+    #         app.breed_name = "Corgi"
+    #     elif c == "pug":
+    #         app.img_src = "pug.jpg"
+    #         #app.img_src = os.path.join(os.path.dirname(os.path.realpath(__file__)), "pug.jpg")
+    #         app.breed_name = "Pug"
+    #     elif c == "husky":
+    #         app.img_src = "husky.jpg"
+    #         #app.img_src = os.path.join(os.path.dirname(os.path.realpath(__file__)), "husky.jpg")
+    #         app.breed_name = "Husky"
+    #     elif c == "german_shepherd":
+    #         app.img_src = "german_shepherd.jpg"
+    #         #app.img_src = os.path.join(os.path.dirname(os.path.realpath(__file__)), "german_shepherd.jpg")
+    #         app.breed_name = "German Shepherd"
+    #     elif c == "chihuahua":
+    #         app.img_src = "chihuahua.jpg"
+    #         #app.img_src = os.path.join(os.path.dirname(os.path.realpath(__file__)), "chihuahua.jpg")
+    #         app.breed_name = "Chihuahua"
+    
+
+class Corgi_Result(Screen):
+    pass
+
+class Pug_Result(Screen):
+    pass
+
+class Husky_Result(Screen):
+    pass
+
+class GS_Result(Screen):
+    pass
+
+class Chihuahua_Result(Screen):
+    pass
+
 
 class WYPupper(App):
     # scores
@@ -67,13 +103,9 @@ class WYPupper(App):
         'chihuahua': 0
     }
 
-    # doggo data
-    corgi_data = ('corgi.jpg', 'Corgi', '')
-    pug_data = ('pug.jpg', 'Pug', '')
-    husky_data = ('husky.jpg', 'Husky', '')
-    german_shepherd_data = ('german_shepherd.jpg', 'Corgi', '')
-    chihuahua_data = ('chihuahua.jpg', 'Chihuahua', '')
-    
+    # for quiz result
+    img_src = ''
+    breed_name = ''
 
     def build(self):
         screen_manager = ScreenManager()
@@ -91,7 +123,13 @@ class WYPupper(App):
         screen_manager.add_widget(Question8(name = "question_8")) #q8
         screen_manager.add_widget(Question9(name = "question_9")) #q9
         screen_manager.add_widget(Question10(name = "question_10")) #q10
-        screen_manager.add_widget(QuizResult(name = "quiz_result")) #q10
+        
+        # result pages
+        screen_manager.add_widget(Corgi_Result(name = "corgi"))
+        screen_manager.add_widget(Pug_Result(name = "pug"))
+        screen_manager.add_widget(Husky_Result(name = "husky"))
+        screen_manager.add_widget(GS_Result(name = "gs"))
+        screen_manager.add_widget(Chihuahua_Result(name = "chihuahua"))
 
         return screen_manager
 
