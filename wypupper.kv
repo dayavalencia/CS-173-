@@ -191,8 +191,8 @@
             halign: "left"
             valign: "top"
             font_size: 18
-
-
+            text_size: self.width, None
+            height: self.texture_size[1]
 
         Button:
             background_normal: ""
@@ -202,6 +202,9 @@
             font_size: 18
             bold: True
             size_hint:(1.0, 1.0)
+            text_size: self.width, None
+            height: self.texture_size[1]
+            padding: (50, 50)
             on_press:
                 app.qscore['corgi'] = app.qscore['corgi'] + 1
 
@@ -274,7 +277,8 @@
             halign: "left"
             valign: "top"
             font_size: 18
-
+            text_size: self.width, None
+            height: self.texture_size[1]
 
         Button:
             background_normal: ""
@@ -313,6 +317,10 @@
             font_size: 18
             bold: True
             size_hint:(1.0, 1.0)
+            text_size: self.width, None
+            height: self.texture_size[1]
+            padding: (50, 50)
+
             on_press:
                 app.qscore['chihuahua'] = app.qscore['chihuahua'] + 1
                 app.qscore['pug'] = app.qscore['pug'] + 1
@@ -505,6 +513,8 @@
             halign: "left"
             valign: "top"
             font_size: 18
+            text_size: self.width, None
+            height: self.texture_size[1]
 
         Button:
             background_normal: ""
@@ -588,6 +598,8 @@
             halign: "left"
             valign: "top"
             font_size: 18
+            text_size: self.width, None
+            height: self.texture_size[1]
 
         Button:
             background_normal: ""
@@ -645,6 +657,8 @@
             halign: "left"
             valign: "top"
             font_size: 18
+            text_size: self.width, None
+            height: self.texture_size[1]
 
         Button:
             background_normal: ""
@@ -702,7 +716,8 @@
             halign: "left"
             valign: "top"
             font_size: 18
-
+            text_size: self.width, None
+            height: self.texture_size[1]
 
         Button:
             background_normal: ""
@@ -740,6 +755,10 @@
             font_size: 18
             bold: True
             size_hint:(1.0, 1.0)
+            text_size: self.width, None
+            height: self.texture_size[1]
+            padding: (50, 50)
+
             on_press:
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'question_10'
@@ -854,14 +873,102 @@
 
         Image:
             source: "corgi.jpg"
-            size_hint:(1.0, 0.70)
+            size_hint: 1,0.45
         Label:
             text: "Corgi"
+            size_hint: 1,0.05
             color: 0.55, 0.35, 0.20, 1
             bold: True
             halign: "left"
             valign: "top"
             font_size: 36
+        ScrollView:
+            size_hint: 1,0.45
+            GridLayout:
+                size_hint: 1,None
+                height: self.minimum_height
+                cols: 1
+                Label:
+                    text: "[b]Lifespan:[/b] 12-14 years"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Size:[/b] (Pembroke Welsh Corgi)\n    Height: Male: 25–30 cm, Female: 25–30 cm\n    Weight: Male: 10–14 kg, Female: 10–13 kg"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]House:[/b] They are alright to live in apartments as long as they get their exercise to prevent them from being destructive."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Best for:[/b] Corgis are generally loyal to the family unit, intelligent, and playful. However, due to their breeding as herding dogs, they are very bossy and tend to do things their way. Therefore, it is not recommended to have a corgi around children under the age of 5."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Training Needs:[/b] Corgis can be trained with relative ease and they are quick learners, however, as previously mentioned, Corgis can be quite talkative so extra work will have to be put in to train them not to bark all the time."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Exercise Needs:[/b] Originally herding dogs bred for farm work, Corgis (of both varieties) have a lot of energy. They need at least an hour or 2 hours a day of exercise."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Grooming Needs:[/b] Pembroke Welsh Corgis are easy to groom. Their medium-length coat only requires a weekly brushing to remove loose and dead hair. Twice a year the Pembroke will shed heavily, and brushing may need to occur several times per week. Frequently bathing a Pembroke will cause the natural weatherproof oils in the hair to break down, so it is important to only bath a Corgi as-needed"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Special Traits:[/b]\n    a. generally observant and attentive\n    b. bark-happy and vigilant"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Trivia:[/b]\n    a. There are two types of Welsh corgis: the Pembroke Welsh corgi and the Cardigan Welsh corgi\n    b. Corgi means ‘dwarf dog’ in Welsh"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Back to Home"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: 18
+            bold: True
+            size_hint: 1.0, 0.05
+            on_press:
+                app.qscore['corgi'] = 0
+                app.qscore['pug'] = 0
+                app.qscore['husky'] = 0
+                app.qscore['german_shepherd'] = 0
+                app.qscore['chihuahua'] = 0
+
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'screen_one'
+
 
 <Pug_Result>:
     BoxLayout:
@@ -877,14 +984,108 @@
 
         Image:
             source: "pug.jpg"
-            size_hint:(1.0, 0.70)
+            size_hint: 1,0.45
         Label:
             text: "Pug"
+            size_hint: 1,0.05
             color: 0.55, 0.35, 0.20, 1
             bold: True
             halign: "left"
             valign: "top"
             font_size: 36
+        ScrollView:
+            size_hint: 1,0.45
+            GridLayout:
+                size_hint: 1,None
+                height: self.minimum_height
+                cols: 1
+                Label:
+                    text: "[b]Lifespan:[/b] 12-15 years"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Size:[/b]\n    Height: Male: 30 cm, Female 25 cm\n    Weight: 6-8 kgs"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]House:[/b] Adapts Well to apartment living"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Best for:[/b] Pugs love kids. Though small, the Pug is not delicate like some toy breeds, so he is a good breed choice for families with children."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Training Needs:[/b] When teaching your Pug tricks and commands, feed treats only for training purposes and avoid them at other times. Pugs are a low-activity breed and may become obese with excessive treats, which can worsen breathing problems. Pugs older than 6 months may take longer to train, especially potty train, than younger dogs."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Exercise Needs:[/b] Pugs are not the most active dogs in the world. On a scale of 1 to 10, they would be a 2 where 1 is least active. This is one of the reasons why Pugs are susceptible to obesity. They have a hard time breathing because of their short nose and compromised air passages. Any exercise that increases the demand for oxygen should not be overdone since they will struggle to get sufficient air to meet the demands being placed on them."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Grooming Needs:[/b] It is important to keep the folds of the mouth area dry and clean on your Pug dog. Bacteria and germs can quickly grow in the deep folds of the Pug dog's face. It is important to keep the folds of the mouth area dry and clean on your Pug dog. Bacteria and germs can quickly grow in the wrinkles of the Pug dog's face. This area must be kept clean and dry; a bit of a challenge since the Pug dog can be known to snort, sneeze, snore and drool...just a bit!"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Special Health Concerns:[/b] prone to major health problems like Pug Dog Encephalitis (PDE) and canine hip dysplasia (CHD), as well as minor concerns like elongated palate, patellar luxation, stenotic nares, Legg-Perthes disease, entropion, keratoconjunctivitis sicca (KCS), hemivertebra, obesity, and skin infections. Nerve degeneration, demodicosis, seizures, distichiasis, and allergies are occasionally seen in this breed of dog. Its facial wrinkles must be kept clean to prevent skin fold dermatitis, a form of skin inflammation. The Pug is also sensitive to heat and anesthesia."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Special Traits:[/b] They are known as the clowns of the canine world because they have a great sense of humor and like to show off. Originally bred to be a lap dog, the Pug thrives on human companionship."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Trivia:[/b] The Pug has had various names throughout the years, including Mopshond in Holland, Chinese or Dutch Pug in England, and Mops in Germany. But the word \"pug\" is thought to have come from the Latin pugnus, meaning fist and attributed to its clenched fist-like head, or from the 18th-century marmoset \"pug\" monkey, which purportedly appeared quite similar to the dog."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Back to Home"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: 18
+            bold: True
+            size_hint: 1.0, 0.05
+            on_press:
+                app.qscore['corgi'] = 0
+                app.qscore['pug'] = 0
+                app.qscore['husky'] = 0
+                app.qscore['german_shepherd'] = 0
+                app.qscore['chihuahua'] = 0
+
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'screen_one'
 
 
 <Husky_Result>:
@@ -901,14 +1102,108 @@
 
         Image:
             source: "husky.jpg"
-            size_hint:(1.0, 0.70)
+            size_hint: 1,0.45
         Label:
             text: "Husky"
+            size_hint: 1,0.05
             color: 0.55, 0.35, 0.20, 1
             bold: True
             halign: "left"
             valign: "top"
             font_size: 36
+        ScrollView:
+            size_hint: 1,0.45
+            GridLayout:
+                size_hint: 1,None
+                height: self.minimum_height
+                cols: 1
+                Label:
+                    text: "[b]Lifespan:[/b] 12-15 years"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Size:[/b]\n    Height: Female: 50–56 cm, Male: 54–60 cm\n    Weight: Female: 16–23 kg, Male: 20–27 kg"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]House:[/b] Need a lot of space preferably a home with a yard"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Best for:[/b] The husky is an affectionate family dog and great with kids. It also gets along well with other dogs."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Training Needs:[/b] Siberian Huskies are notorious for being difficult to train. They are a pack dog with a hierarchical order of leadership and, therefore, are stubborn, strong-willed, and independent.This means that to succeed in training your new puppy, you're going to need to be diligent and consistent. Treating your husky as an equal is not a good idea because huskies are hierarchical pack dogs and only follow leaders"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Exercise Needs:[/b] Siberian Huskies need plenty of exercise – ideally over 2 hours per day, so to take on this breed you need to be very active! They need plenty of space to run around in!"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Grooming Needs:[/b] A Husky’s dense double-coat must be brushed at least once a week and brushed daily during the shedding season. Aside from brushing, a bathing your dog will keep him clean and in good hygiene.Do not shave, strip or clip your husky close. Never clip your huskies whiskers – they are sensory devices that your dog needs."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Special Health Concerns:[/b] Health problems for Siberian Huskies, including eye conditions, hip dysplasia, and hypothyroidism, are mainly genetic."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Special Traits:[/b] They can survive up to -60 degrees Celsius!"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Trivia:[/b]\n    a. They love to howl! And they howl loud!\n    b. The Siberian Husky was originally developed by the Chukchi people of the Chukchi Peninsula in eastern Siberia. They were brought to Nome, Alaska, in 1908 for sled-dog racing.\n    c. Huskies can change their metabolism! They can run for hours burning energy but reserving fat stores."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Back to Home"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: 18
+            bold: True
+            size_hint: 1.0, 0.05
+            on_press:
+                app.qscore['corgi'] = 0
+                app.qscore['pug'] = 0
+                app.qscore['husky'] = 0
+                app.qscore['german_shepherd'] = 0
+                app.qscore['chihuahua'] = 0
+
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'screen_one'
 
 
 <GS_Result>:
@@ -925,14 +1220,108 @@
 
         Image:
             source: "german_shepherd.jpg"
-            size_hint:(1.0, 0.70)
+            size_hint: 1,0.45
         Label:
             text: "German Shepherd"
+            size_hint: 1,0.05
             color: 0.55, 0.35, 0.20, 1
             bold: True
             halign: "left"
             valign: "top"
             font_size: 36
+        ScrollView:
+            size_hint: 1,0.45
+            GridLayout:
+                size_hint: 1,None
+                height: self.minimum_height
+                cols: 1
+                Label:
+                    text: "[b]Lifespan:[/b] 9 - 13 years"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Size:[/b]\n    Height: Male: 60–65 cm, Female: 55–60 cm\n    Weight: Male: 30–40 kg, Female: 22–32 kg"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]House:[/b] German Shepherds require a big space to run around and not disturb others with their barking because of their acute hearing. "
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Best for:[/b] Unless a German shepherd is mature and well-trained, the dog is better suited as a pet for older children and adults."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Training Needs:[/b] Before training, The most important and the first situation to focus on is who is the alpha leader. This is highly important because if your German Shepherd pup does not know or sense an alpha leader he will think it is him and he will run your house, not in a good way.The way to become the alpha leader with your German Shepherd is to exhibit and exude calm confidence and be strong with your demands for proper behavior to be displayed at all times."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Exercise Needs:[/b] They require at least 2 hours of exercise per day to make sure they aren't bored."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Grooming Needs:[/b] A GSD is a double-coated (usually) dog breed that needs to be groomed using a brush or else it might get dirty. If your GSD is very active and exercises a lot, make sure you groom it on a daily basis."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Special Health Concerns:[/b] Hip Dysplasia"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Special Traits:[/b]\n    a. German Shepherds have a rather distinct personality marked by a direct and fearless expression, obvious self-confidence and reluctance to develop indiscriminate friendships. They tend to be indifferent to strangers and can be aloof; however, once they befriend you, their devotion is life-long.\n    b. The breed is considered to be smart and easy to train.\n    c. Thrives on challenging activities and exercise\n    d. Looks stern and imposing"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Trivia:[/b]\n    a. What was the name of a German Shepherd, the first hero of his kind, to return home from the Vietnam War? Nemo\n    b. The GSD is the second most registered dog in the United States."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Back to Home"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: 18
+            bold: True
+            size_hint: 1.0, 0.05
+            on_press:
+                app.qscore['corgi'] = 0
+                app.qscore['pug'] = 0
+                app.qscore['husky'] = 0
+                app.qscore['german_shepherd'] = 0
+                app.qscore['chihuahua'] = 0
+
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'screen_one'
 
 
 <Chihuahua_Result>:
@@ -949,12 +1338,106 @@
 
         Image:
             source: "chihuahua.jpg"
-            size_hint:(1.0, 0.70)
+            size_hint: 1,0.45
         Label:
             text: "Chihuahua"
+            size_hint: 1,0.05
             color: 0.55, 0.35, 0.20, 1
             bold: True
             halign: "left"
             valign: "top"
             font_size: 36
+        ScrollView:
+            size_hint: 1,0.45
+            GridLayout:
+                size_hint: 1,None
+                height: self.minimum_height
+                cols: 1
+                Label:
+                    text: "[b]Lifespan:[/b] 12-20 years"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Size:[/b]\n    Height: 15-23 cm\n    Weight: 2.7 kg"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]House:[/b] Indoor dog. Alright with apartment living"
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Best for:[/b] Families with children, singles, seniors but interactions with kids must always be supervised as Chihuahuas are quite fragile dogs."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Training Needs:[/b] Start early! Potty training a Chihuahua can be very difficult – in fact, Chihuahuas are one of the most difficult breeds to housebreak.Training a Chihuahua not to bark sharply at every little thing she sees or hears can be difficult – this breed is extremely alert and observant, quick to notice anything that seems \"different\"."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Exercise Needs:[/b] Due to his tendency to become hyper, this dog needs to have daily outdoor activity in order to release pent-up energy. If not, a Chihuahua may be prone to destructive behavior such as chewing. Their exercise requirements vary by age."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Grooming Needs:[/b] Many people choose to bathe and condition their Chihuahua once a month, less often or more often with show dogs that may be bathed once a week. They are low shedders."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Special Health Concerns:[/b] Chihuahuas are at risk of having a Luxating Patella, Dental Issues, and Hypoglycemia."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Special Traits:[/b] They have a false sense of toughness."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                Label:
+                    text: "[b]Trivia:[/b] Chihuahuas tend to be a one-person dog. They really bond with their owners and can be protective."
+                    markup: True
+                    size_hint_y: None
+                    color: 0.55, 0.35, 0.20, 1
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Back to Home"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: 18
+            bold: True
+            size_hint: 1.0, 0.05
+            on_press:
+                app.qscore['corgi'] = 0
+                app.qscore['pug'] = 0
+                app.qscore['husky'] = 0
+                app.qscore['german_shepherd'] = 0
+                app.qscore['chihuahua'] = 0
+
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'screen_one'
         
