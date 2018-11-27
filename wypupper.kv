@@ -1,4 +1,4 @@
-#: import os os
+
 <ScreenOne>:
     BoxLayout:
         canvas:
@@ -41,11 +41,11 @@
         orientation: "vertical"
         FileChooserIconView:
             #path: "/DCIM/Camera"   #for android phone?
-            path: "/home/ria_yangzon/Pictures" #For Ria Desktop
+            path: "/home/ria_yangzon/Desktop/173" #For Ria Desktop
             filters: ["*.jpg","*.png"]
             multiselect: False
             on_submit:
-                #root.select(*args)
+                app.select_to(*args)
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'result'
         Button:
@@ -64,7 +64,20 @@
     #https://kivy.org/doc/stable/api-kivy.core.image.html
     #https://stackoverflow.com/questions/19735498/how-do-i-get-info-of-a-file-selected-with-filechooser-in-kivy
     BoxLayout:
+        canvas:
+            Color:
+                rgba: 0.95, 0.95, 0.95, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        spacing: 10
+        padding: 50
         orientation: "vertical"
+        Image:
+            id: pic
+            source: app.imgArg1
+            size: self.size
+            #size_hint: 1,0.45
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
@@ -823,7 +836,7 @@
             on_press:
                 app.qscore['chihuahua'] = app.qscore['chihuahua'] + 1
                 app.qscore['pug'] = app.qscore['pug'] + 1
-                
+
                 c = max(app.qscore, key=app.qscore.get)
                 root.manager.transition.direction = 'left'
 
@@ -847,7 +860,7 @@
             on_press:
                 app.qscore['german_shepherd'] = app.qscore['german_shepherd'] + 1
                 app.qscore['husky'] = app.qscore['husky'] + 1
-                
+
                 c = max(app.qscore, key=app.qscore.get)
                 root.manager.transition.direction = 'left'
 
@@ -856,8 +869,8 @@
                 elif c == "husky": root.manager.current = 'husky'
                 elif c == "german_shepherd": root.manager.current = 'gs'
                 elif c == "chihuahua": root.manager.current = 'chihuahua'
-                    
-                
+
+
 
 <Corgi_Result>:
     BoxLayout:
@@ -1440,4 +1453,3 @@
 
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'screen_one'
-        

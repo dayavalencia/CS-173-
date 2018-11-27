@@ -8,10 +8,11 @@ from kivy.uix.image import Image
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.filechooser import FileChooserIconView
-
+import image
 import io
 from kivy.core.image import Image as CoreImage
 
+imgArg = ""
 
 class ScreenOne(Screen):
     pass
@@ -20,7 +21,10 @@ class ScreenTwo(Screen):
     pass
 
 class AlgoResult(Screen):
-    pass
+    try:
+        global imgArg
+    except:
+        pass
 # quiz -------------------------------
 class ScreenThree(Screen):
     pass
@@ -75,7 +79,7 @@ class Question10(Screen):
     #         app.img_src = "chihuahua.jpg"
     #         #app.img_src = os.path.join(os.path.dirname(os.path.realpath(__file__)), "chihuahua.jpg")
     #         app.breed_name = "Chihuahua"
-    
+
 
 class Corgi_Result(Screen):
     pass
@@ -104,8 +108,19 @@ class WYPupper(App):
     }
 
     # for quiz result
-    img_src = ''
     breed_name = ''
+    # global imgArg
+    # imgArg=''
+    # imgArg1 = imgArg
+    # print(imgArg1)
+    imgArg1 = ""
+    def select_to(self,*args):
+        try:
+            global imgArg
+            imgArg1 = args[1][0]
+            imgArg = imgArg1
+        except:
+            pass
 
     def build(self):
         screen_manager = ScreenManager()
@@ -123,7 +138,7 @@ class WYPupper(App):
         screen_manager.add_widget(Question8(name = "question_8")) #q8
         screen_manager.add_widget(Question9(name = "question_9")) #q9
         screen_manager.add_widget(Question10(name = "question_10")) #q10
-        
+
         # result pages
         screen_manager.add_widget(Corgi_Result(name = "corgi"))
         screen_manager.add_widget(Pug_Result(name = "pug"))
