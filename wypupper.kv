@@ -1,3 +1,4 @@
+#: import main main
 
 <ScreenOne>:
     BoxLayout:
@@ -37,17 +38,22 @@
                 root.manager.current = 'screen_three'
 
 <ScreenTwo>:
+    id:ar1   
     BoxLayout:
         orientation: "vertical"
         FileChooserIconView:
             #path: "/DCIM/Camera"   #for android phone?
-            path: "/home/ria_yangzon/Desktop/173" #For Ria Desktop
+            path: "/home/invillanueva/Downloads/CS-173-WYP-master" #For Ria Desktop
             filters: ["*.jpg","*.png"]
             multiselect: False
             on_submit:
-                app.select_to(*args)
+                app.ar1= root.select_to(*args)
+                root.set_path(*args)
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'result'
+                #main.predict_breed('corgi.jpg')
+                #main.predict_breed('headshot.jpg')
+
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
@@ -60,6 +66,9 @@
                 root.manager.transition.direction = 'right'
                 root.manager.current = 'screen_one'
 <AlgoResult>:
+    img:img
+    
+
     #path - current path of the file chooser + name of selected file? (way to get the selected file maybe?)
     #https://kivy.org/doc/stable/api-kivy.core.image.html
     #https://stackoverflow.com/questions/19735498/how-do-i-get-info-of-a-file-selected-with-filechooser-in-kivy
@@ -73,11 +82,21 @@
         spacing: 10
         padding: 50
         orientation: "vertical"
+
         Image:
-            id: pic
-            source: app.imgArg1
+            id: img
+            #source: app.imgArg1
+            #source: 'pug.jpg'
+            source: app.ar1
             size: self.size
-            #size_hint: 1,0.45
+            size_hint: 1,0.45
+            #id: img
+            #on_touch_down: str('Relative: {}'.format(args[1].pos))
+            #pos_hint:{'left': 1, 'bottom': 1}
+            #size_hint: 0.5,1
+            #allow_strech: True
+
+       
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
@@ -215,9 +234,9 @@
             font_size: 18
             bold: True
             size_hint:(1.0, 1.0)
-            text_size: self.width, None
-            height: self.texture_size[1]
-            padding: (50, 50)
+            #text_size: self.width, None
+            #height: self.texture_size[1]
+            #padding: (50, 50)
             on_press:
                 app.qscore['corgi'] = app.qscore['corgi'] + 1
 
@@ -330,9 +349,9 @@
             font_size: 18
             bold: True
             size_hint:(1.0, 1.0)
-            text_size: self.width, None
-            height: self.texture_size[1]
-            padding: (50, 50)
+            #text_size: self.width, None
+            #height: self.texture_size[1]
+            #padding: (50, 50)
 
             on_press:
                 app.qscore['chihuahua'] = app.qscore['chihuahua'] + 1
@@ -768,9 +787,9 @@
             font_size: 18
             bold: True
             size_hint:(1.0, 1.0)
-            text_size: self.width, None
-            height: self.texture_size[1]
-            padding: (50, 50)
+            #text_size: self.width, None
+            #height: self.texture_size[1]
+            #padding: (50, 50)
 
             on_press:
                 root.manager.transition.direction = 'left'

@@ -1,6 +1,6 @@
 import kivy
 import os
-
+#: import main dog
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
@@ -8,23 +8,48 @@ from kivy.uix.image import Image
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.filechooser import FileChooserIconView
-import image
+#import image
+#from PIL import *
 import io
 from kivy.core.image import Image as CoreImage
+from kivy.properties import StringProperty
 
-imgArg = ""
-
+#from dog import *
+imgSrc='german_shepherd.jpg'
+imgArg1="pug.jpg"
+imgArg='corgi.jpg'
 class ScreenOne(Screen):
     pass
 
 class ScreenTwo(Screen):
-    pass
 
-class AlgoResult(Screen):
-    try:
+    imgSrc='headshot.jpg'
+    
+    def select_to(self,*args):
+        
+        try:
+            imgArg=args[1][0]
+            imgSrc=imgArg
+            print imgSrc
+            return imgSrc
+            #iw= Image.open(args[1][0])
+            #self.img.source= args[1][0]
+            #self.img.source.reload()
+        except:
+            pass
+    def set_path(self,*imgpath):
         global imgArg
-    except:
-        pass
+        imgArg=imgpath
+        #return imgArg
+
+    #imgSrc=imgArg
+class AlgoResult(Screen):
+   #predict_breed(imgArg1) 
+
+
+    #obj2=ScreenTwo()
+    #imgArg=obj2.imgSrc
+    pass
 # quiz -------------------------------
 class ScreenThree(Screen):
     pass
@@ -109,18 +134,25 @@ class WYPupper(App):
 
     # for quiz result
     breed_name = ''
-    # global imgArg
-    # imgArg=''
+    
+    #obj1=ScreenTwo()
+    #imgArg=obj1.select_to(imgArg)
+    #print imgArg
+   
+  #  obj1=ScreenTwo()
+
+   # imgArg=obj1.imgSrc
+    #imgArg=imgArg1
+
+
+    ar1 = StringProperty("")
+    
+    
     # imgArg1 = imgArg
     # print(imgArg1)
-    imgArg1 = ""
-    def select_to(self,*args):
-        try:
-            global imgArg
-            imgArg1 = args[1][0]
-            imgArg = imgArg1
-        except:
-            pass
+    #imgArg1 = "/home/invillanueva/Desktop/CS173/Pics/s4/husky_13.jpg"
+
+
 
     def build(self):
         screen_manager = ScreenManager()
