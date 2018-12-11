@@ -17,14 +17,14 @@
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
-            text: "Upload Photo"
+            text: "Classify Pupper"
             color: 0.95, 0.95, 0.95, 1
             font_size: 18
             bold: True
             size_hint:(1.0, 0.15)
             on_press:
                 root.manager.transition.direction = 'left'
-                root.manager.current = 'screen_two'
+                root.manager.current = 'select_photo'
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
@@ -37,8 +37,104 @@
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'screen_three'
 
+<SelectPhoto>:
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 0.95, 0.95, 0.95, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        spacing: 10
+        padding: 50
+        orientation: "vertical"
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Camera"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: 18
+            bold: True
+            size_hint:(1.0, 0.15)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'cam'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Uplad Photo"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: 18
+            bold: True
+            size_hint:(1.0, 0.15)
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'screen_two'
+
+<Cam>:
+    BoxLayout:
+        orientation: 'vertical'
+        Camera:
+            id: camera
+            play: False
+        ToggleButton:
+            text: 'Play'
+            on_press: camera.play = not camera.play
+            size_hint_y: None
+            height: '48dp'
+        Button:
+            text: 'Capture'
+            size_hint_y: None
+            height: '48dp'
+            on_press:
+                root.capture()
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'confirm_photo'
+
+<ConfirmPhoto>:
+    img:img
+    BoxLayout:
+        canvas:
+            Color:
+                rgba: 0.95, 0.95, 0.95, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        spacing: 10
+        padding: 50
+        orientation: "vertical"
+
+        Image:
+            id: img
+            source: app.ar1
+            size: self.size
+            size_hint: 1,0.45
+
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Done"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: 18
+            bold: True
+            size_hint:(1.0, 0.15)
+            on_press:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'algo_result'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Back"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: 18
+            bold: True
+            size_hint:(1.0, 0.15)
+            on_press:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'cam'
+
 <ScreenTwo>:
-    id:ar1   
+    id:ar1
     BoxLayout:
         orientation: "vertical"
         FileChooserIconView:
@@ -67,7 +163,7 @@
                 root.manager.current = 'screen_one'
 <AlgoResult>:
     img:img
-    
+
 
     #path - current path of the file chooser + name of selected file? (way to get the selected file maybe?)
     #https://kivy.org/doc/stable/api-kivy.core.image.html
@@ -96,7 +192,7 @@
             #size_hint: 0.5,1
             #allow_strech: True
 
-       
+
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1

@@ -14,6 +14,8 @@ import io
 from kivy.core.image import Image as CoreImage
 from kivy.properties import StringProperty
 
+import time
+
 #from dog import *
 imgSrc='german_shepherd.jpg'
 imgArg1="pug.jpg"
@@ -21,16 +23,34 @@ imgArg='corgi.jpg'
 class ScreenOne(Screen):
     pass
 
+class SelectPhoto(Screen):
+    pass
+
+class Cam (Screen):
+    def capture(self):
+        # '''
+        # Function to capture the images and give them the names
+        # according to their captured time and date.
+        # '''
+        camera = self.ids['camera']
+        timestr = time.strftime("%Y%m%d_%H%M%S")
+        filename = "IMG_{}.png".format(timestr)
+        camera.export_to_png("IMG_{}.png".format(timestr))
+            #to get the image from the camera, pwedeng just select the image name agad. make filename global. Sa desktop it puts the images where your code is saved.
+
+class ConfirmPhoto(Screen):
+    pass
+
 class ScreenTwo(Screen):
 
     imgSrc='headshot.jpg'
-    
+
     def select_to(self,*args):
-        
+
         try:
             imgArg=args[1][0]
             imgSrc=imgArg
-            print imgSrc
+            print (imgSrc)
             return imgSrc
             #iw= Image.open(args[1][0])
             #self.img.source= args[1][0]
@@ -44,7 +64,7 @@ class ScreenTwo(Screen):
 
     #imgSrc=imgArg
 class AlgoResult(Screen):
-   #predict_breed(imgArg1) 
+   #predict_breed(imgArg1)
 
 
     #obj2=ScreenTwo()
@@ -134,11 +154,11 @@ class WYPupper(App):
 
     # for quiz result
     breed_name = ''
-    
+
     #obj1=ScreenTwo()
     #imgArg=obj1.select_to(imgArg)
     #print imgArg
-   
+
   #  obj1=ScreenTwo()
 
    # imgArg=obj1.imgSrc
@@ -146,8 +166,8 @@ class WYPupper(App):
 
 
     ar1 = StringProperty("")
-    
-    
+
+
     # imgArg1 = imgArg
     # print(imgArg1)
     #imgArg1 = "/home/invillanueva/Desktop/CS173/Pics/s4/husky_13.jpg"
@@ -158,6 +178,10 @@ class WYPupper(App):
         screen_manager = ScreenManager()
 
         screen_manager.add_widget(ScreenOne(name = "screen_one")) #home
+
+        screen_manager.add_widget(SelectPhoto(name = "select_photo")) #Select Photo
+        screen_manager.add_widget(Cam(name = "cam")) #Camera
+        screen_manager.add_widget(ConfirmPhoto(name = "confirm_photo")) #Camera
         screen_manager.add_widget(ScreenTwo(name = "screen_two")) #filechooser
         screen_manager.add_widget(AlgoResult(name = "result")) #algo results screen
         screen_manager.add_widget(ScreenThree(name = "screen_three")) #quizstart
