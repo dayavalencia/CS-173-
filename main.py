@@ -20,6 +20,7 @@ import time
 imgSrc='german_shepherd.jpg'
 imgArg1="pug.jpg"
 imgArg='corgi.jpg'
+
 class ScreenOne(Screen):
     pass
 
@@ -27,17 +28,31 @@ class SelectPhoto(Screen):
     pass
 
 class Cam (Screen):
-    def capture(self):
+	def capture(self):
         # '''
         # Function to capture the images and give them the names
         # according to their captured time and date.
         # '''
-        camera = self.ids['camera']
-        timestr = time.strftime("%Y%m%d_%H%M%S")
-        filename = "IMG_{}.png".format(timestr)
-        camera.export_to_png("IMG_{}.png".format(timestr))
-            #to get the image from the camera, pwedeng just select the image name agad. make filename global. Sa desktop it puts the images where your code is saved.
-
+		camera = self.ids['camera']
+		timestr = time.strftime("%Y%m%d_%H%M%S")
+		filename = "IMG_{}.png".format(timestr)
+		camera.export_to_png("IMG_{}.png".format(timestr))
+		#to get the image from the camera, pwedeng just select the image name agad. make filename global. Sa desktop it puts the images where your code is saved.
+		return filename
+	
+	def select(self, arg):
+		try:
+			imgArg = arg
+			imgSrc = imgArg
+			print (imgSrc)
+			return imgSrc
+		except:
+			pass
+	
+	def set_path(self, imgpath): 
+		global imgArg
+		imgArg=imgpath
+			
 class ConfirmPhoto(Screen):
     pass
 
@@ -52,15 +67,12 @@ class ScreenTwo(Screen):
             imgSrc=imgArg
             print (imgSrc)
             return imgSrc
-            #iw= Image.open(args[1][0])
-            #self.img.source= args[1][0]
-            #self.img.source.reload()
+          
         except:
             pass
     def set_path(self,*imgpath):
         global imgArg
         imgArg=imgpath
-        #return imgArg
 
     #imgSrc=imgArg
 class AlgoResult(Screen):
@@ -155,23 +167,8 @@ class WYPupper(App):
     # for quiz result
     breed_name = ''
 
-    #obj1=ScreenTwo()
-    #imgArg=obj1.select_to(imgArg)
-    #print imgArg
-
-  #  obj1=ScreenTwo()
-
-   # imgArg=obj1.imgSrc
-    #imgArg=imgArg1
-
 
     ar1 = StringProperty("")
-
-
-    # imgArg1 = imgArg
-    # print(imgArg1)
-    #imgArg1 = "/home/invillanueva/Desktop/CS173/Pics/s4/husky_13.jpg"
-
 
 
     def build(self):

@@ -1,4 +1,9 @@
 #: import main main
+#To do
+#	pass gotten image to algo result 
+#	
+#
+#
 
 <ScreenOne>:
     BoxLayout:
@@ -55,39 +60,49 @@
             color: 0.95, 0.95, 0.95, 1
             font_size: 18
             bold: True
-            size_hint:(1.0, 0.15)
+            size_hint:(1.0, 1.0)
             on_press:
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'cam'
         Button:
             background_normal: ""
             background_color: 0.55, 0.35, 0.20, 1
-            text: "Uplad Photo"
+            text: "Upload Photo"
             color: 0.95, 0.95, 0.95, 1
             font_size: 18
             bold: True
-            size_hint:(1.0, 0.15)
+            size_hint:(1.0, 1.0)
             on_press:
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'screen_two'
+        Button:
+            background_normal: ""
+            background_color: 0.55, 0.35, 0.20, 1
+            text: "Back"
+            color: 0.95, 0.95, 0.95, 1
+            font_size: 18
+            bold: True
+            size_hint:(1.0,  1.0)
+            on_press:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'screen_one'
 
 <Cam>:
     BoxLayout:
         orientation: 'vertical'
         Camera:
             id: camera
-            play: False
-        ToggleButton:
-            text: 'Play'
-            on_press: camera.play = not camera.play
-            size_hint_y: None
-            height: '48dp'
+			resolution: (640, 480)
+            play: True
         Button:
             text: 'Capture'
             size_hint_y: None
             height: '48dp'
             on_press:
-                root.capture()
+                filename = root.capture()
+				app.ar1 = root.select(filename)
+				root.set_path(filename)
+				camera.play = not camera.play
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'confirm_photo'
 
@@ -131,7 +146,7 @@
             size_hint:(1.0, 0.15)
             on_press:
                 root.manager.transition.direction = 'right'
-                root.manager.current = 'cam'
+                root.manager.current = 'select_photo'
 
 <ScreenTwo>:
     id:ar1
@@ -147,8 +162,7 @@
                 root.set_path(*args)
                 root.manager.transition.direction = 'left'
                 root.manager.current = 'result'
-                #main.predict_breed('corgi.jpg')
-                #main.predict_breed('headshot.jpg')
+               
 
         Button:
             background_normal: ""
@@ -163,11 +177,6 @@
                 root.manager.current = 'screen_one'
 <AlgoResult>:
     img:img
-
-
-    #path - current path of the file chooser + name of selected file? (way to get the selected file maybe?)
-    #https://kivy.org/doc/stable/api-kivy.core.image.html
-    #https://stackoverflow.com/questions/19735498/how-do-i-get-info-of-a-file-selected-with-filechooser-in-kivy
     BoxLayout:
         canvas:
             Color:
@@ -181,8 +190,6 @@
 
         Image:
             id: img
-            #source: app.imgArg1
-            #source: 'pug.jpg'
             source: app.ar1
             size: self.size
             size_hint: 1,0.45
