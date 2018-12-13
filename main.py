@@ -38,8 +38,8 @@ class ScreenOne(Screen):
             self.manager.screens[16].ids['rank_three'].text = "Rank 3: " + app.rank[2]
             self.manager.screens[16].ids['rank_four'].text = "Rank 4: " + app.rank[3]
             self.manager.screens[16].ids['rank_five'].text = "Rank 5: " + app.rank[4]
-            
-            print application.rank
+
+            print (application.rank)
 
 class SelectPhoto(Screen):
     pass
@@ -56,7 +56,7 @@ class Cam (Screen):
 		camera.export_to_png("IMG_{}.png".format(timestr))
 		#to get the image from the camera, pwedeng just select the image name agad. make filename global. Sa desktop it puts the images where your code is saved.
 		return filename
-	
+
 	def select(self, arg):
 		try:
 			imgArg = arg
@@ -65,11 +65,11 @@ class Cam (Screen):
 			return imgSrc
 		except:
 			pass
-	
-	def set_path(self, imgpath): 
+
+	def set_path(self, imgpath):
 		global imgArg
 		imgArg=imgpath
-			
+
 class ConfirmPhoto(Screen):
     pass
 
@@ -84,7 +84,7 @@ class ScreenTwo(Screen):
             imgSrc=imgArg
             print (imgSrc)
             return imgSrc
-          
+
         except:
             pass
     def set_path(self,*imgpath):
@@ -168,7 +168,7 @@ class Question10(Screen):
             elif c == "husky": application.rank.append("Husky"); application.qscore['husky'] = 0
             elif c == "german_shepherd": application.rank.append("German Shepherd"); application.qscore['german_shepherd'] = 0
             elif c == "chihuahua": application.rank.append("Chihuahua"); application.qscore['chihuahua'] = 0
-    
+
     def write_rankings(self, application):
         f = open("rankings.inp", "w")
         for x in range(5):
@@ -178,6 +178,8 @@ class Question10(Screen):
 class Rankings_Page(Screen):
     pass
 class No_Rankings(Screen):
+    pass
+class TermsandConditions(Screen):
     pass
 class Privacy_Policy(Screen):
     pass
@@ -247,6 +249,7 @@ class WYPupper(App):
 
         screen_manager.add_widget(No_Rankings(name = "no_rankings"))
         screen_manager.add_widget(Privacy_Policy(name = "privacy_policy"))
+        screen_manager.add_widget(TermsandConditions(name = "terms_and_conditions"))
 
         return screen_manager
 
