@@ -22,7 +22,24 @@ imgArg1="pug.jpg"
 imgArg='corgi.jpg'
 
 class ScreenOne(Screen):
-    pass
+    def read_rankings(self, application):
+        if os.stat("rankings.inp").st_size == 0:
+            return 0
+        else:
+            f = open("rankings.inp", "r")
+            for x in range(5):
+                inp = f.readline()
+                inp = inp.rstrip('\n')
+                application.rank.append(inp)
+            f.close()
+
+            self.manager.screens[16].ids['rank_one'].text = "Rank 1: " + app.rank[0]
+            self.manager.screens[16].ids['rank_two'].text = "Rank 2: " + app.rank[1]
+            self.manager.screens[16].ids['rank_three'].text = "Rank 3: " + app.rank[2]
+            self.manager.screens[16].ids['rank_four'].text = "Rank 4: " + app.rank[3]
+            self.manager.screens[16].ids['rank_five'].text = "Rank 5: " + app.rank[4]
+            
+            print application.rank
 
 class SelectPhoto(Screen):
     pass
@@ -136,8 +153,34 @@ class Question10(Screen):
     #         app.img_src = "chihuahua.jpg"
     #         #app.img_src = os.path.join(os.path.dirname(os.path.realpath(__file__)), "chihuahua.jpg")
     #         app.breed_name = "Chihuahua"
+    def create_rankings(self, application):
+        for x in range(5):
+            c = max(application.qscore, key=application.qscore.get)
 
+            # if c == "corgi": root.manager.current = 'corgi'
+            # elif c == "pug": root.manager.current = 'pug'
+            # elif c == "husky": root.manager.current = 'husky'
+            # elif c == "german_shepherd": root.manager.current = 'gs'
+            # elif c == "chihuahua": root.manager.current = 'chihuahua'
 
+            if c == "corgi": application.rank.append("Corgi"); application.qscore['corgi'] = 0
+            elif c == "pug": application.rank.append("Pug"); application.qscore['pug'] = 0
+            elif c == "husky": application.rank.append("Husky"); application.qscore['husky'] = 0
+            elif c == "german_shepherd": application.rank.append("German Shepherd"); application.qscore['german_shepherd'] = 0
+            elif c == "chihuahua": application.rank.append("Chihuahua"); application.qscore['chihuahua'] = 0
+    
+    def write_rankings(self, application):
+        f = open("rankings.inp", "w")
+        for x in range(5):
+            f.write(application.rank[x] + "\n")
+        f.close()
+
+class Rankings_Page(Screen):
+    pass
+class No_Rankings(Screen):
+    pass
+class Privacy_Policy(Screen):
+    pass
 class Corgi_Result(Screen):
     pass
 
@@ -164,6 +207,8 @@ class WYPupper(App):
         'chihuahua': 0
     }
 
+    rank = []
+
     # for quiz result
     breed_name = ''
 
@@ -176,28 +221,32 @@ class WYPupper(App):
 
         screen_manager.add_widget(ScreenOne(name = "screen_one")) #home
 
-        screen_manager.add_widget(SelectPhoto(name = "select_photo")) #Select Photo
-        screen_manager.add_widget(Cam(name = "cam")) #Camera
-        screen_manager.add_widget(ConfirmPhoto(name = "confirm_photo")) #Camera
-        screen_manager.add_widget(ScreenTwo(name = "screen_two")) #filechooser
-        screen_manager.add_widget(AlgoResult(name = "result")) #algo results screen
-        screen_manager.add_widget(ScreenThree(name = "screen_three")) #quizstart
-        screen_manager.add_widget(Question2(name = "question_2")) #q2
-        screen_manager.add_widget(Question3(name = "question_3")) #q3
-        screen_manager.add_widget(Question4(name = "question_4")) #q4
-        screen_manager.add_widget(Question5(name = "question_5")) #q5
-        screen_manager.add_widget(Question6(name = "question_6")) #q6
-        screen_manager.add_widget(Question7(name = "question_7")) #q7
-        screen_manager.add_widget(Question8(name = "question_8")) #q8
-        screen_manager.add_widget(Question9(name = "question_9")) #q9
-        screen_manager.add_widget(Question10(name = "question_10")) #q10
+        screen_manager.add_widget(SelectPhoto(name = "select_photo")) #Select Photo - 0
+        screen_manager.add_widget(Cam(name = "cam")) #Camera - 1
+        screen_manager.add_widget(ConfirmPhoto(name = "confirm_photo")) #Camera -2
+        screen_manager.add_widget(ScreenTwo(name = "screen_two")) #filechooser - 3
+        screen_manager.add_widget(AlgoResult(name = "result")) #algo results screen - 4
+        screen_manager.add_widget(ScreenThree(name = "screen_three")) #quizstart - 5
+        screen_manager.add_widget(Question2(name = "question_2")) #q2 - 6
+        screen_manager.add_widget(Question3(name = "question_3")) #q3 - 7
+        screen_manager.add_widget(Question4(name = "question_4")) #q4 - 8
+        screen_manager.add_widget(Question5(name = "question_5")) #q5 - 9
+        screen_manager.add_widget(Question6(name = "question_6")) #q6 - 10
+        screen_manager.add_widget(Question7(name = "question_7")) #q7 - 11
+        screen_manager.add_widget(Question8(name = "question_8")) #q8 - 12
+        screen_manager.add_widget(Question9(name = "question_9")) #q9 - 13
+        screen_manager.add_widget(Question10(name = "question_10")) #q10 - 14
 
         # result pages
+        screen_manager.add_widget(Rankings_Page(name = "rankings")) # - 16
         screen_manager.add_widget(Corgi_Result(name = "corgi"))
         screen_manager.add_widget(Pug_Result(name = "pug"))
         screen_manager.add_widget(Husky_Result(name = "husky"))
         screen_manager.add_widget(GS_Result(name = "gs"))
         screen_manager.add_widget(Chihuahua_Result(name = "chihuahua"))
+
+        screen_manager.add_widget(No_Rankings(name = "no_rankings"))
+        screen_manager.add_widget(Privacy_Policy(name = "privacy_policy"))
 
         return screen_manager
 
