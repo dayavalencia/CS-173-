@@ -1,6 +1,6 @@
 import kivy
 import os
-#: import main dog
+import dog
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
@@ -15,11 +15,6 @@ from kivy.core.image import Image as CoreImage
 from kivy.properties import StringProperty
 
 import time
-
-#from dog import *
-imgSrc='german_shepherd.jpg'
-imgArg1="pug.jpg"
-imgArg='corgi.jpg'
 
 class ScreenOne(Screen):
     def read_rankings(self, application):
@@ -75,12 +70,11 @@ class ConfirmPhoto(Screen):
 
 class ScreenTwo(Screen):
 
-    imgSrc='headshot.jpg'
 
     def select_to(self,*args):
 
         try:
-            imgArg=args[1][0]
+            imgArg= args[1][0]
             imgSrc=imgArg
             print (imgSrc)
             return imgSrc
@@ -91,13 +85,11 @@ class ScreenTwo(Screen):
         global imgArg
         imgArg=imgpath
 
-    #imgSrc=imgArg
+    def classifier_result(self,ar1):
+        return dog.ResNet50_predict_breed(ar1)
+
 class AlgoResult(Screen):
-   #predict_breed(imgArg1)
 
-
-    #obj2=ScreenTwo()
-    #imgArg=obj2.imgSrc
     pass
 # quiz -------------------------------
 class ScreenThree(Screen):
@@ -216,7 +208,7 @@ class WYPupper(App):
 
 
     ar1 = StringProperty("")
-
+    result = StringProperty("")
 
     def build(self):
         screen_manager = ScreenManager()

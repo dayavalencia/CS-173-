@@ -3,18 +3,18 @@ from sklearn.datasets import load_files
 from keras.utils import np_utils
 import numpy as np
 from glob import glob
-import cv2                
-import matplotlib.pyplot as plt                        
+import cv2
+import matplotlib.pyplot as plt
 from keras.applications.resnet50 import ResNet50
-from keras.preprocessing import image                  
+from keras.preprocessing import image
 from tqdm import tqdm
-from PIL import ImageFile    
+from PIL import ImageFile
 from keras.preprocessing.image import ImageDataGenerator
 from keras.layers import Conv2D, MaxPooling2D, GlobalAveragePooling2D
 from keras.layers import Dropout, Flatten, Dense, Activation
 from keras.models import Sequential
 from keras.layers.normalization import BatchNormalization
-from keras.callbacks import ModelCheckpoint 
+from keras.callbacks import ModelCheckpoint
 from keras.applications.resnet50 import preprocess_input, decode_predictions
 from extract_bottleneck_features import *
 import os
@@ -85,13 +85,16 @@ def ResNet50_predict_breed(img_path):
     breed = dog_names[np.argmax(predicted_vector)]
     if dog_detector(img_path) == True:
         print("Breed: {}".format(breed))
+        return breed
     else:
-        print("If this person was a dog, that person would be a {}".format(breed))
+        result = "If this person was a dog, that person would be a {}".format(breed)
+        print(result)
+        return result
 
 
 def dog_detector(img_path):
     prediction = ResNet50_predict_labels(img_path)
-    return ((prediction <= 268) & (prediction >= 151)) 
+    return ((prediction <= 268) & (prediction >= 151))
 
 def face_detector(img_path):
     img = cv2.imread(img_path)
@@ -112,6 +115,7 @@ def predict_breed(img_path):
         return breed
     else:
         print("No human face or dog detected")
+        return "No human face or dog detected"
 
 
 #predict_breed('husky_104.jpg')
